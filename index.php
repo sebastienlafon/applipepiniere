@@ -10,6 +10,7 @@ $controllerRoom = new controllerRoom();
 $salles = $controllerRoom->controllerViewRooms();
 $salle = $controllerRoom->controllerViewRoom();
 $formAddRoom = $controllerRoom->controllerFormAddRoom();
+$formAddFurniture = $controllerRoom->controllerFormAddFurniture();
 
 ?>
     <table>
@@ -31,6 +32,10 @@ $formAddRoom = $controllerRoom->controllerFormAddRoom();
         </tr>
      </table>
 
-<?php echo $formAddRoom; 
+<?php // echo $formAddRoom; 
 
-$formAddRoomOk  = $controllerRoom->controllerAddRoom();
+//$controllerRoom->controllerAddRoom();
+
+echo $formAddFurniture;
+//gerer duplicate en try avec un if isset ou un 
+//$controllerRoom->controllerAddFurniture();

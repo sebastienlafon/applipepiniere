@@ -96,9 +96,23 @@ public function viewViewRoom($query) {
                         <input type='submit' value='Envoyer' />
                 </form> 
                 ";
-        
-        return $form;
+            return $form;
+    } 
+    public function viewAddfurniture() {
 
-        
-    }    
+        $form .="
+                <form method='post' action='index.php'>
+                    <p>
+                        <label for='nomEquipement'>Saisissez un nom d'éaquipement</label>
+                        <input type='text' name='nomEquipement' id='nomEquipement' />
+                        <label for='caracteristiques'>Saisissez les caractéristiques de l'équipement</label>
+                        <input type='text' name='caracteristiques' id='caracteristiques' />
+                        <label for='quantite'>Saisissez la quatité dans cette salle</label>
+                        <input type='text' name='quantite' id='quantite' />
+                    </p>
+                        <input type='submit' value='Envoyer' />
+                </form> 
+                ";
+            return $form;
+        }    
 }

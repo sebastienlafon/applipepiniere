@@ -26,14 +26,29 @@ class controllerRoom {
         $postSalle = $_POST['salle'];
         $postPrix = $_POST['prix'];
         $postDetails =$_POST['details'];
-if (isset($postSalle)){
+        if (isset($postSalle)){
             $this->modelRoom = new modelRoom();           
             $this->modelRoom->modelAddRoom($postSalle,$postPrix,$postDetails);
-}
-        
-    
-    
-   
+        }
+        else if(empty($postsalle)){
+            echo 'entrez vos informations de salle avant de valider';
+        }
     }
-    
+    public function controllerFormAddFurniture(){
+        $this->viewRooms= new viewRooms();
+        return $this->viewRooms->viewAddfurniture();
+    }
+        public function controllerAddFurniture() {
+
+            $oldidequipement = mysql_insert_id();
+            $idequipement = 3;
+            $nomEquipement = $_POST['nomEquipement'];
+            $caracteristiques = $_POST['caracteristiques'];
+            $quantite =$_POST['quantite'];
+            if (isset($nomEquipement)){
+                $this->modelRoom = new modelRoom();           
+                $this->modelRoom->modelAddFurniture
+                ($idequipement, $nomEquipement, $caracteristiques, $quantite);
+            }
+        }
 }

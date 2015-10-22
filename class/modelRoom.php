@@ -36,5 +36,22 @@ class modelRoom extends connection{
                 ";
         $this->db->query($sql); 
                 var_dump($sql);
-    }    
+    }
+    
+    public function modelAddFurniture($idequipement, $nomEquipement, $caracteristiques, $quantite){
+        echo $idequipement;
+        $sql =  "
+                INSERT INTO rrmobilier(idEquipement, nomEquipement, caracteristiques) 
+                VALUES ('$idequipement','$nomEquipement','$caracteristiques')
+                ";
+        $this->db->query($sql); 
+        var_dump($sql);
+         $sql =  "
+                INSERT INTO rrequipee(quantite, idEquipement, idSalle) 
+                VALUES ('$quantite','$idequipement',2)
+                ";
+        $this->db->query($sql);        
+         var_dump($sql);
+    }
+    
 }
